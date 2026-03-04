@@ -1,0 +1,201 @@
+{
+  "project_name": "Quick Demo Project",
+  "generated_at": "2026-03-04T14:45:45.884424",
+  "global_general_notes": [
+    "1. Contractor shall verify all dimensions and conditions in the field prior to commencement of work.",
+    "2. All work shall comply with applicable building codes and local ordinances.",
+    "3. Do not scale drawings. Use figured dimensions only.",
+    "4. Report any discrepancies to the Architect prior to proceeding.",
+    "5. Refer to specifications for material and finish requirements."
+  ],
+  "global_code_notes": [
+    "1. All work shall comply with the International Building Code (IBC) as adopted locally.",
+    "2. Fire-rated assemblies shall be maintained per UL listings.",
+    "3. Accessibility requirements per ADA / ICC A117.1 apply throughout."
+  ],
+  "sheets": [
+    {
+      "sheet_id": "A-101",
+      "sheet_name": "A-101 - FIRST FLOOR DEMOLITION PLAN",
+      "discipline": "Architectural",
+      "general_notes": [
+        "1. Contractor shall verify all dimensions and conditions in the field prior to commencement of work.",
+        "2. All work shall comply with applicable building codes and local ordinances.",
+        "3. Do not scale drawings. Use figured dimensions only.",
+        "4. Report any discrepancies to the Architect prior to proceeding.",
+        "5. Refer to specifications for material and finish requirements."
+      ],
+      "code_notes": [
+        "1. All work shall comply with the International Building Code (IBC) as adopted locally.",
+        "2. Fire-rated assemblies shall be maintained per UL listings.",
+        "3. Accessibility requirements per ADA / ICC A117.1 apply throughout."
+      ],
+      "phase_notes": {},
+      "element_driven_notes": [
+        {
+          "trigger_rule_id": "demo_elements_present",
+          "section_title": "DEMOLITION NOTES",
+          "body": [
+            "1. Contractor shall field-verify all existing conditions prior to demolition.",
+            "2. Remove and dispose of demolished material per local regulations.",
+            "3. Protect existing construction to remain from damage during demolition.",
+            "4. Cap and seal all abandoned utilities. Coordinate with MEP trades.",
+            "5. Patch and repair finishes at demolition boundaries to match existing."
+          ]
+        },
+        {
+          "trigger_rule_id": "new_walls_present",
+          "section_title": "NEW WORK NOTES",
+          "body": [
+            "1. All new partitions shall be constructed per details on drawings.",
+            "2. Provide fire-stopping at all penetrations through rated assemblies.",
+            "3. Coordinate new framing with MEP rough-in prior to closing walls.",
+            "4. Install vapor / moisture barriers per specifications where indicated."
+          ]
+        },
+        {
+          "trigger_rule_id": "plumbing_fixtures_present",
+          "section_title": "PLUMBING COORDINATION",
+          "body": [
+            "1. Plumbing fixture locations are diagrammatic. Coordinate exact placement with plumbing engineer.",
+            "2. Provide backing and blocking for wall-mounted fixtures.",
+            "3. Verify fixture rough-in dimensions with manufacturer's data."
+          ]
+        },
+        {
+          "trigger_rule_id": "existing_to_remain",
+          "section_title": "EXISTING CONDITIONS NOTES",
+          "body": [
+            "1. Existing conditions shown are based on available as-built documents and field observation.",
+            "2. Contractor shall verify all existing conditions prior to construction.",
+            "3. Report any discrepancies to the Architect immediately."
+          ]
+        }
+      ],
+      "scope_notes": [],
+      "manual_notes": []
+    },
+    {
+      "sheet_id": "A-102",
+      "sheet_name": "A-102 - FIRST FLOOR NEW WORK PLAN",
+      "discipline": "Architectural",
+      "general_notes": [
+        "1. Contractor shall verify all dimensions and conditions in the field prior to commencement of work.",
+        "2. All work shall comply with applicable building codes and local ordinances.",
+        "3. Do not scale drawings. Use figured dimensions only.",
+        "4. Report any discrepancies to the Architect prior to proceeding.",
+        "5. Refer to specifications for material and finish requirements."
+      ],
+      "code_notes": [
+        "1. All work shall comply with the International Building Code (IBC) as adopted locally.",
+        "2. Fire-rated assemblies shall be maintained per UL listings.",
+        "3. Accessibility requirements per ADA / ICC A117.1 apply throughout."
+      ],
+      "phase_notes": {},
+      "element_driven_notes": [
+        {
+          "trigger_rule_id": "demo_elements_present",
+          "section_title": "DEMOLITION NOTES",
+          "body": [
+            "1. Contractor shall field-verify all existing conditions prior to demolition.",
+            "2. Remove and dispose of demolished material per local regulations.",
+            "3. Protect existing construction to remain from damage during demolition.",
+            "4. Cap and seal all abandoned utilities. Coordinate with MEP trades.",
+            "5. Patch and repair finishes at demolition boundaries to match existing."
+          ]
+        },
+        {
+          "trigger_rule_id": "new_walls_present",
+          "section_title": "NEW WORK NOTES",
+          "body": [
+            "1. All new partitions shall be constructed per details on drawings.",
+            "2. Provide fire-stopping at all penetrations through rated assemblies.",
+            "3. Coordinate new framing with MEP rough-in prior to closing walls.",
+            "4. Install vapor / moisture barriers per specifications where indicated."
+          ]
+        },
+        {
+          "trigger_rule_id": "plumbing_fixtures_present",
+          "section_title": "PLUMBING COORDINATION",
+          "body": [
+            "1. Plumbing fixture locations are diagrammatic. Coordinate exact placement with plumbing engineer.",
+            "2. Provide backing and blocking for wall-mounted fixtures.",
+            "3. Verify fixture rough-in dimensions with manufacturer's data."
+          ]
+        },
+        {
+          "trigger_rule_id": "existing_to_remain",
+          "section_title": "EXISTING CONDITIONS NOTES",
+          "body": [
+            "1. Existing conditions shown are based on available as-built documents and field observation.",
+            "2. Contractor shall verify all existing conditions prior to construction.",
+            "3. Report any discrepancies to the Architect immediately."
+          ]
+        }
+      ],
+      "scope_notes": [],
+      "manual_notes": []
+    },
+    {
+      "sheet_id": "P-101",
+      "sheet_name": "P-101 - PLUMBING PLAN",
+      "discipline": "Plumbing",
+      "general_notes": [
+        "1. Contractor shall verify all dimensions and conditions in the field prior to commencement of work.",
+        "2. All work shall comply with applicable building codes and local ordinances.",
+        "3. Do not scale drawings. Use figured dimensions only.",
+        "4. Report any discrepancies to the Architect prior to proceeding.",
+        "5. Refer to specifications for material and finish requirements."
+      ],
+      "code_notes": [
+        "1. All work shall comply with the International Building Code (IBC) as adopted locally.",
+        "2. Fire-rated assemblies shall be maintained per UL listings.",
+        "3. Accessibility requirements per ADA / ICC A117.1 apply throughout."
+      ],
+      "phase_notes": {},
+      "element_driven_notes": [
+        {
+          "trigger_rule_id": "demo_elements_present",
+          "section_title": "DEMOLITION NOTES",
+          "body": [
+            "1. Contractor shall field-verify all existing conditions prior to demolition.",
+            "2. Remove and dispose of demolished material per local regulations.",
+            "3. Protect existing construction to remain from damage during demolition.",
+            "4. Cap and seal all abandoned utilities. Coordinate with MEP trades.",
+            "5. Patch and repair finishes at demolition boundaries to match existing."
+          ]
+        },
+        {
+          "trigger_rule_id": "new_walls_present",
+          "section_title": "NEW WORK NOTES",
+          "body": [
+            "1. All new partitions shall be constructed per details on drawings.",
+            "2. Provide fire-stopping at all penetrations through rated assemblies.",
+            "3. Coordinate new framing with MEP rough-in prior to closing walls.",
+            "4. Install vapor / moisture barriers per specifications where indicated."
+          ]
+        },
+        {
+          "trigger_rule_id": "plumbing_fixtures_present",
+          "section_title": "PLUMBING COORDINATION",
+          "body": [
+            "1. Plumbing fixture locations are diagrammatic. Coordinate exact placement with plumbing engineer.",
+            "2. Provide backing and blocking for wall-mounted fixtures.",
+            "3. Verify fixture rough-in dimensions with manufacturer's data."
+          ]
+        },
+        {
+          "trigger_rule_id": "existing_to_remain",
+          "section_title": "EXISTING CONDITIONS NOTES",
+          "body": [
+            "1. Existing conditions shown are based on available as-built documents and field observation.",
+            "2. Contractor shall verify all existing conditions prior to construction.",
+            "3. Report any discrepancies to the Architect immediately."
+          ]
+        }
+      ],
+      "scope_notes": [],
+      "manual_notes": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Core
+archicad>=27.0.0
+pydantic>=2.0
+
+# Testing
+pytest>=7.0
+
+# Dev utilities (optional)
+rich>=13.0          # pretty console output

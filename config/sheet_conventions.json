@@ -1,0 +1,17 @@
+{
+  "$schema": "./sheet_conventions.schema.json",
+  "_comment": "Sheet naming convention. 'prefix' maps to disciplines; 'pattern' is a regex that extracts discipline + number.",
+  "pattern": "^(?P<discipline>[A-Z]+)-(?P<number>\\d+)$",
+  "disciplines": {
+    "A":  {"name": "Architectural",  "label": "Architectural"},
+    "S":  {"name": "Structural",     "label": "Structural"},
+    "M":  {"name": "Mechanical",     "label": "Mechanical"},
+    "P":  {"name": "Plumbing",       "label": "Plumbing"},
+    "E":  {"name": "Electrical",     "label": "Electrical"},
+    "FP": {"name": "Fire Protection","label": "Fire Protection"},
+    "L":  {"name": "Landscape",      "label": "Landscape"},
+    "C":  {"name": "Civil",          "label": "Civil"},
+    "G":  {"name": "General",        "label": "General"}
+  },
+  "examples": ["A-101", "A-102", "S-101", "M-101", "P-101", "E-101"]
+}

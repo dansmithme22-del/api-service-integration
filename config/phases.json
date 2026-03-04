@@ -1,0 +1,26 @@
+{
+  "$schema": "./phases.schema.json",
+  "_comment": "Renovation phase definitions. 'ac_status' must match Archicad's internal Renovation Status values.",
+  "phases": [
+    {
+      "id": "existing",
+      "label": "Existing",
+      "ac_status": 1,
+      "description": "Elements that exist before any work begins."
+    },
+    {
+      "id": "demolition",
+      "label": "Demolition",
+      "ac_status": 2,
+      "description": "Elements to be demolished or removed."
+    },
+    {
+      "id": "new_construction",
+      "label": "New Construction",
+      "ac_status": 3,
+      "description": "New elements being constructed."
+    }
+  ],
+  "phase_order": ["existing", "demolition", "new_construction"],
+  "default_phase": "new_construction"
+}

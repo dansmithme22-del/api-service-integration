@@ -1,0 +1,60 @@
+{
+  "$schema": "./rules.schema.json",
+  "_comment": "Annotation rules. Each rule has a 'condition' and a 'note_section' to inject when the condition is true for a given sheet.",
+  "rules": [
+    {
+      "id": "demo_elements_present",
+      "description": "If any demolition-phase elements are visible on a sheet, add Demolition Notes.",
+      "condition": {
+        "type": "phase_elements_on_sheet",
+        "phase": "demolition",
+        "min_count": 1
+      },
+      "note_section": {
+        "section_title": "DEMOLITION NOTES",
+        "template_key": "demolition_notes"
+      }
+    },
+    {
+      "id": "new_walls_present",
+      "description": "If any new-construction walls exist on a sheet, add New Work Notes.",
+      "condition": {
+        "type": "phase_element_type_on_sheet",
+        "phase": "new_construction",
+        "element_type": "Wall",
+        "min_count": 1
+      },
+      "note_section": {
+        "section_title": "NEW WORK NOTES",
+        "template_key": "new_work_notes"
+      }
+    },
+    {
+      "id": "plumbing_fixtures_present",
+      "description": "If any plumbing fixtures are visible on a sheet, add Plumbing Coordination note.",
+      "condition": {
+        "type": "element_classification_on_sheet",
+        "classification": "Plumbing Fixture",
+        "element_types": ["Object", "Morph"],
+        "min_count": 1
+      },
+      "note_section": {
+        "section_title": "PLUMBING COORDINATION",
+        "template_key": "plumbing_coordination"
+      }
+    },
+    {
+      "id": "existing_to_remain",
+      "description": "If any existing elements are on the sheet, add Existing-to-Remain note.",
+      "condition": {
+        "type": "phase_elements_on_sheet",
+        "phase": "existing",
+        "min_count": 1
+      },
+      "note_section": {
+        "section_title": "EXISTING CONDITIONS NOTES",
+        "template_key": "existing_conditions"
+      }
+    }
+  ]
+}
