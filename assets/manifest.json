@@ -1,0 +1,66 @@
+{
+  "$comment": "Index of reusable vector blocks. Each entry cross-references the semantic knowledge store (knowledge_id) and CSI MasterFormat (csi_division).",
+
+  "symbols": [
+    {
+      "id": "sym.door_tag",
+      "file": "symbols/door_tag.svg",
+      "kind": "symbol",
+      "csi_division": "08",
+      "sheets": ["A-101", "A-601"],
+      "description": "Standard door tag — number-letter pair inside a circle.",
+      "knowledge_id": "csi:08"
+    },
+    {
+      "id": "sym.window_tag",
+      "file": "symbols/window_tag.svg",
+      "kind": "symbol",
+      "csi_division": "08",
+      "sheets": ["A-101", "A-602"],
+      "description": "Standard window tag — letter inside a hexagon.",
+      "knowledge_id": "csi:08"
+    },
+    {
+      "id": "sym.room_tag",
+      "file": "symbols/room_tag.svg",
+      "kind": "symbol",
+      "csi_division": "09",
+      "sheets": ["A-101", "A-603", "A-701", "A-801"],
+      "description": "Room name + number + square-footage tag.",
+      "knowledge_id": "csi:09"
+    },
+    {
+      "id": "sym.elevation_tag",
+      "file": "symbols/elevation_tag.svg",
+      "kind": "symbol",
+      "csi_division": "01",
+      "sheets": ["A-101"],
+      "description": "Elevation reference tag — number above / sheet below.",
+      "knowledge_id": "csi:01"
+    },
+    {
+      "id": "sym.section_tag",
+      "file": "symbols/section_tag.svg",
+      "kind": "symbol",
+      "csi_division": "01",
+      "sheets": ["A-101", "A-301"],
+      "description": "Building section tag — number above / sheet below, with cut indicator.",
+      "knowledge_id": "csi:01"
+    },
+    {
+      "id": "sym.column_grid",
+      "file": "symbols/column_grid.svg",
+      "kind": "symbol",
+      "csi_division": "05",
+      "sheets": ["A-101", "S-201"],
+      "description": "Column-grid bubble — letter or number inside a circle on a grid line.",
+      "knowledge_id": "csi:05"
+    }
+  ],
+
+  "details": [],
+
+  "typical_rooms": [],
+
+  "title_blocks": []
+}

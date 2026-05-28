@@ -1,0 +1,146 @@
+{
+  "$comment": "AIA CAD Layer Guidelines (2nd ed.) + NCS v6 canonical layer set. See agent_docs/130_DRAFTING_STANDARDS.md for derivation and field meanings. Color is ACI (AutoCAD Color Index).",
+
+  "format": "D-MMMM[-NNNN][-XXXX][-STAT]",
+
+  "disciplines": {
+    "G": "General",
+    "H": "Hazardous Materials",
+    "V": "Survey / Mapping",
+    "B": "Geotechnical",
+    "C": "Civil",
+    "L": "Landscape",
+    "S": "Structural",
+    "A": "Architectural",
+    "I": "Interiors",
+    "Q": "Equipment",
+    "F": "Fire Protection",
+    "P": "Plumbing",
+    "D": "Process",
+    "M": "Mechanical",
+    "E": "Electrical",
+    "W": "Distributed Energy",
+    "T": "Telecom",
+    "R": "Resource",
+    "X": "Other",
+    "Z": "Contractor / Shop"
+  },
+
+  "status_codes": {
+    "EXST": "Existing to remain",
+    "DEMO": "To be demolished",
+    "NEWW": "New work",
+    "RELO": "To be relocated",
+    "TEMP": "Temporary",
+    "FUTR": "Future work",
+    "PHS1": "Phase 1",
+    "PHS2": "Phase 2",
+    "PHS3": "Phase 3"
+  },
+
+  "layers": [
+    { "name": "A-WALL",       "desc": "Walls (general)",                  "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+    { "name": "A-WALL-EXST",  "desc": "Existing walls to remain",         "color": 8, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+    { "name": "A-WALL-DEMO",  "desc": "Walls to be demolished",           "color": 1, "linetype": "HIDDEN",     "lineweight_mm": 0.35 },
+    { "name": "A-WALL-NEWW",  "desc": "New walls",                        "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+    { "name": "A-WALL-FIRE",  "desc": "Fire-rated walls",                 "color": 1, "linetype": "CONTINUOUS", "lineweight_mm": 0.70 },
+    { "name": "A-WALL-FULL",  "desc": "Full-height walls",                "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+    { "name": "A-WALL-PRHT",  "desc": "Partial-height walls",             "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-WALL-PATT",  "desc": "Wall hatching / patterning",       "color": 8, "linetype": "CONTINUOUS", "lineweight_mm": 0.13 },
+
+    { "name": "A-DOOR",       "desc": "Doors",                            "color": 4, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-DOOR-IDEN",  "desc": "Door tags",                        "color": 4, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-DOOR-FRAM",  "desc": "Door frames",                      "color": 4, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-DOOR-FIRE",  "desc": "Fire-rated doors",                 "color": 1, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+
+    { "name": "A-GLAZ",       "desc": "Glazing (windows + interior)",     "color": 5, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-GLAZ-IDEN",  "desc": "Window tags",                      "color": 5, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+
+    { "name": "A-COLS",       "desc": "Columns",                          "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+
+    { "name": "A-FLOR",       "desc": "Floor information (general)",      "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-FLOR-FIXT",  "desc": "Floor-mounted fixed equipment",    "color": 3, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-FLOR-WDWK",  "desc": "Casework / millwork",              "color": 31,"linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-FLOR-STRS",  "desc": "Stairs",                           "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-FLOR-RISR",  "desc": "Stair risers",                     "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-FLOR-RAIL",  "desc": "Rails",                            "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-FLOR-SPCL",  "desc": "Specialties (toilet accessories)", "color": 6, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-FLOR-OVHD",  "desc": "Overhead features (dashed)",       "color": 7, "linetype": "HIDDEN",     "lineweight_mm": 0.25 },
+    { "name": "A-FLOR-PFIX",  "desc": "Plumbing fixtures (arch view)",    "color": 4, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-FLOR-IDEN",  "desc": "Room tags",                        "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-FLOR-PATT",  "desc": "Floor patterning / hatching",      "color": 8, "linetype": "CONTINUOUS", "lineweight_mm": 0.13 },
+
+    { "name": "A-FURN",       "desc": "Furniture (movable)",              "color": 6, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-FURN-WKST",  "desc": "Workstations",                     "color": 6, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+
+    { "name": "A-EQPM",       "desc": "Equipment (general)",              "color": 3, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-EQPM-FIXD",  "desc": "Fixed equipment",                  "color": 3, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-EQPM-MOVE",  "desc": "Movable equipment",                "color": 3, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+
+    { "name": "A-CLNG",       "desc": "Ceiling info (RCP)",               "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-CLNG-GRID",  "desc": "Ceiling grid",                     "color": 8, "linetype": "CONTINUOUS", "lineweight_mm": 0.18 },
+    { "name": "A-CLNG-OPEN",  "desc": "Ceiling penetrations",             "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-CLNG-SUSP",  "desc": "Suspended elements",               "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-CLNG-SOFT",  "desc": "Soffits",                          "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+
+    { "name": "A-ROOF",       "desc": "Roof outline / general",           "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+    { "name": "A-ROOF-OTLN",  "desc": "Roof outline only",                "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+    { "name": "A-ROOF-CONT",  "desc": "Roof contours / slopes",           "color": 7, "linetype": "CENTER",     "lineweight_mm": 0.25 },
+
+    { "name": "A-AREA",       "desc": "Area calculation polygons",        "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.13 },
+    { "name": "A-AREA-IDEN",  "desc": "Area tags",                        "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+
+    { "name": "A-GRID",       "desc": "Column grid lines",                "color": 7, "linetype": "CENTER",     "lineweight_mm": 0.25 },
+    { "name": "A-GRID-IDEN",  "desc": "Grid bubbles",                     "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+
+    { "name": "A-ANNO",       "desc": "Annotations (general)",            "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-ANNO-DIMS",  "desc": "Dimensions",                       "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-ANNO-NOTE",  "desc": "Notes",                            "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-ANNO-TEXT",  "desc": "Text",                             "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-ANNO-SYMB",  "desc": "Reference symbols (section/elev/detail)", "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+    { "name": "A-ANNO-REVS",  "desc": "Revision clouds + tags",           "color": 1, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-ANNO-REDL",  "desc": "Redlines",                         "color": 1, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-ANNO-NPLT",  "desc": "Non-plotting (DEFPOINTS)",         "color": 8, "linetype": "CONTINUOUS", "lineweight_mm": 0.00 },
+    { "name": "A-ANNO-TTLB",  "desc": "Title block",                      "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+
+    { "name": "A-DETL",       "desc": "Details (callouts on plan)",       "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-SECT",       "desc": "Section symbols",                  "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-ELEV",       "desc": "Elevation symbols",                "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+
+    { "name": "A-LITE",       "desc": "Architectural lighting",           "color": 2, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+
+    { "name": "A-EGRS",       "desc": "Egress paths (code plan)",         "color": 1, "linetype": "DASHED",     "lineweight_mm": 0.50 },
+    { "name": "A-CODE",       "desc": "Code analysis",                    "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "A-OCCP",       "desc": "Occupant info / NSF tags",         "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.25 },
+
+    { "name": "S-GRID",       "desc": "Structural grid",                  "color": 7, "linetype": "CENTER",     "lineweight_mm": 0.25 },
+    { "name": "S-COLS",       "desc": "Structural columns",               "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.70 },
+    { "name": "S-BEAM",       "desc": "Beams",                            "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 },
+    { "name": "S-SLAB",       "desc": "Slabs",                            "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.35 },
+    { "name": "S-FNDN",       "desc": "Foundations",                      "color": 7, "linetype": "CONTINUOUS", "lineweight_mm": 0.50 }
+  ],
+
+  "element_to_layer": {
+    "$comment": "Maps PlanGraph element kinds + status to canonical layer.",
+    "Wall|Existing":          "A-WALL-EXST",
+    "Wall|Demolition":        "A-WALL-DEMO",
+    "Wall|New Construction":  "A-WALL-NEWW",
+    "Door":                   "A-DOOR",
+    "Window":                 "A-GLAZ",
+    "Opening":                "A-DOOR-FRAM",
+    "Fixture|Casework":       "A-FLOR-WDWK",
+    "Fixture|Plumbing Fixture":"A-FLOR-PFIX",
+    "Fixture|Equipment":      "A-EQPM-FIXD",
+    "Fixture|Appliance":      "A-EQPM-FIXD",
+    "Fixture|Reception Desk": "A-FLOR-WDWK",
+    "Fixture|Exam Table":     "A-EQPM-FIXD",
+    "Fixture|Kennel Run":     "A-EQPM-FIXD",
+    "Fixture|Column":         "A-COLS",
+    "Fixture|Stair":          "A-FLOR-STRS",
+    "Fixture|Other Built-in": "A-FLOR-FIXT",
+    "Room":                   "A-AREA",
+    "RoomTag":                "A-FLOR-IDEN",
+    "Dimension":              "A-ANNO-DIMS",
+    "Label":                  "A-ANNO-TEXT"
+  }
+}

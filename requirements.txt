@@ -2,6 +2,23 @@
 archicad>=27.0.0
 pydantic>=2.0
 
+# PDF ingest
+pdfplumber>=0.11
+pypdfium2>=4.30
+Pillow>=10.0
+shapely>=2.0
+numpy>=1.26
+
+# Vision providers (install whichever you use; all three are listed for convenience)
+google-genai>=1.0
+anthropic>=0.40
+openai>=1.50
+python-dotenv>=1.0
+
+# Knowledge store (vector DB + local embeddings)
+chromadb>=0.5
+sentence-transformers>=3.0
+
 # Testing
 pytest>=7.0
 

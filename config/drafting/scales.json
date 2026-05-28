@@ -1,0 +1,45 @@
+{
+  "$comment": "Standard architectural and engineering scales. real_in_per_paper_in is the conversion multiplier used throughout the ingest pipeline.",
+
+  "architectural_imperial": [
+    { "verbal": "1/32\" = 1'-0\"", "ratio": "1:384", "real_in_per_paper_in": 384, "typical_use": "Very large site overview" },
+    { "verbal": "1/16\" = 1'-0\"", "ratio": "1:192", "real_in_per_paper_in": 192, "typical_use": "Site plan" },
+    { "verbal": "3/32\" = 1'-0\"", "ratio": "1:128", "real_in_per_paper_in": 128 },
+    { "verbal": "1/8\" = 1'-0\"",  "ratio": "1:96",  "real_in_per_paper_in": 96,  "typical_use": "Small project floor plan" },
+    { "verbal": "3/16\" = 1'-0\"", "ratio": "1:64",  "real_in_per_paper_in": 64 },
+    { "verbal": "1/4\" = 1'-0\"",  "ratio": "1:48",  "real_in_per_paper_in": 48,  "typical_use": "TYPICAL floor plan, elevation, building section", "default": true },
+    { "verbal": "3/8\" = 1'-0\"",  "ratio": "1:32",  "real_in_per_paper_in": 32 },
+    { "verbal": "1/2\" = 1'-0\"",  "ratio": "1:24",  "real_in_per_paper_in": 24,  "typical_use": "Enlarged plan; RCP; stair section" },
+    { "verbal": "3/4\" = 1'-0\"",  "ratio": "1:16",  "real_in_per_paper_in": 16,  "typical_use": "Wall section" },
+    { "verbal": "1\" = 1'-0\"",    "ratio": "1:12",  "real_in_per_paper_in": 12,  "typical_use": "Wall section; large detail" },
+    { "verbal": "1-1/2\" = 1'-0\"","ratio": "1:8",   "real_in_per_paper_in": 8,   "typical_use": "Plan detail; jamb / sill detail" },
+    { "verbal": "3\" = 1'-0\"",    "ratio": "1:4",   "real_in_per_paper_in": 4,   "typical_use": "Full assembly detail" },
+    { "verbal": "6\" = 1'-0\"",    "ratio": "1:2",   "real_in_per_paper_in": 2,   "typical_use": "Tight assembly detail" },
+    { "verbal": "FULL SIZE",       "ratio": "1:1",   "real_in_per_paper_in": 1 }
+  ],
+
+  "engineering_imperial": [
+    { "verbal": "1\" = 10'", "ratio": "1:120",  "real_in_per_paper_in": 120 },
+    { "verbal": "1\" = 20'", "ratio": "1:240",  "real_in_per_paper_in": 240, "typical_use": "Site demolition" },
+    { "verbal": "1\" = 30'", "ratio": "1:360",  "real_in_per_paper_in": 360 },
+    { "verbal": "1\" = 40'", "ratio": "1:480",  "real_in_per_paper_in": 480 },
+    { "verbal": "1\" = 50'", "ratio": "1:600",  "real_in_per_paper_in": 600 },
+    { "verbal": "1\" = 60'", "ratio": "1:720",  "real_in_per_paper_in": 720 },
+    { "verbal": "1\" = 100'","ratio": "1:1200", "real_in_per_paper_in": 1200 }
+  ],
+
+  "drawing_type_default_scales": {
+    "site_plan":             ["1\" = 20'", "1\" = 30'", "1\" = 40'", "1\" = 50'"],
+    "floor_plan":            ["1/4\" = 1'-0\"", "1/8\" = 1'-0\""],
+    "enlarged_plan":         ["1/2\" = 1'-0\""],
+    "reflected_ceiling_plan":["1/4\" = 1'-0\""],
+    "exterior_elevation":    ["1/4\" = 1'-0\"", "1/8\" = 1'-0\""],
+    "interior_elevation":    ["1/4\" = 1'-0\"", "3/8\" = 1'-0\""],
+    "building_section":      ["1/4\" = 1'-0\""],
+    "wall_section":          ["3/4\" = 1'-0\"", "1\" = 1'-0\""],
+    "stair_section":         ["1/2\" = 1'-0\"", "3/4\" = 1'-0\""],
+    "door_detail":           ["1-1/2\" = 1'-0\"", "3\" = 1'-0\""],
+    "window_detail":         ["1-1/2\" = 1'-0\"", "3\" = 1'-0\""],
+    "plan_detail":           ["1-1/2\" = 1'-0\"", "3\" = 1'-0\""]
+  }
+}

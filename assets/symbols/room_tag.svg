@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" width="160" height="80">
+  <title>Standard Room Tag</title>
+  <desc>Room name (top), room number (left), area in SF (right).</desc>
+  <rect x="2" y="2" width="156" height="76" rx="4"
+        fill="white" stroke="#111" stroke-width="1.5"/>
+  <text x="80" y="30" font-family="Arial, sans-serif" font-size="18"
+        font-weight="700" text-anchor="middle" fill="#111">ROOM NAME</text>
+  <line x1="2" y1="44" x2="158" y2="44" stroke="#111" stroke-width="1"/>
+  <text x="40" y="66" font-family="Arial, sans-serif" font-size="16"
+        text-anchor="middle" fill="#111">###</text>
+  <line x1="80" y1="44" x2="80" y2="78" stroke="#111" stroke-width="1"/>
+  <text x="120" y="66" font-family="Arial, sans-serif" font-size="14"
+        text-anchor="middle" fill="#444">### SF</text>
+</svg>

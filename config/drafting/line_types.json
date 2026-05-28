@@ -1,0 +1,33 @@
+{
+  "$comment": "Standard CAD line types per ISO 128 / AutoCAD acad.lin. Each entry maps the canonical name to ASCII visualisation and meaning.",
+
+  "line_types": [
+    { "name": "CONTINUOUS", "viz": "──────",     "meaning": "Visible edges; primary geometry" },
+    { "name": "HIDDEN",     "viz": "─ ─ ─ ─",   "meaning": "Concealed edges (overhead, below floor)" },
+    { "name": "CENTER",     "viz": "──── · ────", "meaning": "Symmetry axes, column grid" },
+    { "name": "CENTER2",    "viz": "── · ── ·", "meaning": "Tighter center pattern" },
+    { "name": "PHANTOM",    "viz": "── ─ ─ ── ─ ─", "meaning": "Alternate positions, adjacent objects" },
+    { "name": "DASHED",     "viz": "─ ─ ─ ─",   "meaning": "Generic dashed; prefer HIDDEN if specific" },
+    { "name": "DASHDOT",    "viz": "─ · ─ · ─", "meaning": "Property line, match line" },
+    { "name": "BORDER",     "viz": "─ ─ ── ─ ─ ──", "meaning": "Drawing borders" },
+    { "name": "DIVIDE",     "viz": "─ ─ · ─ ─ ·", "meaning": "Division line" }
+  ],
+
+  "lineweights_mm": [
+    { "weight": 0.05, "use": "Trivial detail; very fine hatching" },
+    { "weight": 0.13, "use": "Hatching; surface patterning" },
+    { "weight": 0.18, "use": "Minor objects; light annotation; ceiling grid" },
+    { "weight": 0.25, "use": "Text; dimensions; hidden lines; tags" },
+    { "weight": 0.35, "use": "General drawing lines; doors; windows; fixtures; casework" },
+    { "weight": 0.50, "use": "Walls; primary geometry" },
+    { "weight": 0.70, "use": "Cut elements in sections; fire-rated assemblies; sheet borders" },
+    { "weight": 1.00, "use": "Title block borders; match lines" },
+    { "weight": 1.40, "use": "Special emphasis (rare)" },
+    { "weight": 2.00, "use": "Special emphasis (very rare)" }
+  ],
+
+  "weight_progression": {
+    "step_ratio": 1.4,
+    "notes": "ISO 128 weight progression — each step is ~1.4x the previous so weights are visually distinguishable."
+  }
+}

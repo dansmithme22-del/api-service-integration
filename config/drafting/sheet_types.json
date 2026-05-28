@@ -1,0 +1,58 @@
+{
+  "$comment": "NCS sheet identifier format: discipline letter + sheet-type digit + 3-digit sequence. The sheet-type digit organises the set.",
+
+  "format": "X-T-NNN",
+
+  "sheet_type_digits": [
+    { "digit": "0", "name": "General",
+      "examples": ["A-001 Cover Sheet", "A-002 Code Analysis", "A-003 Abbreviations / Symbols Legend"] },
+    { "digit": "1", "name": "Plans",
+      "examples": ["A-101 First Floor Plan", "A-102 Second Floor Plan", "A-131 RCP First Floor"] },
+    { "digit": "2", "name": "Elevations",
+      "examples": ["A-201 Exterior Elevations", "A-211 Interior Elevations"] },
+    { "digit": "3", "name": "Sections",
+      "examples": ["A-301 Building Sections", "A-311 Stair Sections"] },
+    { "digit": "4", "name": "Large-scale views",
+      "examples": ["A-401 Enlarged Plans", "A-411 Wall Sections"] },
+    { "digit": "5", "name": "Details",
+      "examples": ["A-501 Door Details", "A-511 Window Details", "A-521 Plan Details"] },
+    { "digit": "6", "name": "Schedules + diagrams",
+      "examples": ["A-601 Door Schedule", "A-611 Window Schedule", "A-621 Finish Schedule", "A-631 Wall Type Schedule"] },
+    { "digit": "7", "name": "User defined (firm-specific)", "examples": [] },
+    { "digit": "8", "name": "User defined (firm-specific)", "examples": [] },
+    { "digit": "9", "name": "3D representation",
+      "examples": ["A-901 Isometric Views", "A-911 Axonometric Sections"] }
+  ],
+
+  "sequence_grouping_convention": {
+    "1xx": "First floor / level 1",
+    "2xx": "Second floor / level 2",
+    "3xx": "Third floor / level 3",
+    "5xx": "Typical details",
+    "6xx": "Schedules",
+    "9xx": "3D / FFE / specialties"
+  },
+
+  "cd_set_order": [
+    "G — General",
+    "C — Civil",
+    "L — Landscape",
+    "S — Structural",
+    "A — Architectural",
+    "I — Interiors",
+    "F — Fire Protection",
+    "P — Plumbing",
+    "M — Mechanical / HVAC",
+    "E — Electrical",
+    "T — Telecom"
+  ],
+
+  "sheet_sizes_arch_series": [
+    { "name": "ARCH A",  "dims": "9\" x 12\"" },
+    { "name": "ARCH B",  "dims": "12\" x 18\"" },
+    { "name": "ARCH C",  "dims": "18\" x 24\"" },
+    { "name": "ARCH D",  "dims": "24\" x 36\"", "typical_cd": true },
+    { "name": "ARCH E",  "dims": "36\" x 48\"" },
+    { "name": "ARCH E1", "dims": "30\" x 42\"" }
+  ]
+}

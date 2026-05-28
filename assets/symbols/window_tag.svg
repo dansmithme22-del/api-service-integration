@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Standard Window Tag</title>
+  <desc>Hexagon ~3/8" wide; window letter inside (e.g. A, B, C).</desc>
+  <polygon points="32,8 54,20 54,44 32,56 10,44 10,20"
+           fill="white" stroke="#111" stroke-width="2"/>
+  <text x="32" y="38" font-family="Arial, sans-serif" font-size="20"
+        font-weight="600" text-anchor="middle" fill="#111">X</text>
+</svg>

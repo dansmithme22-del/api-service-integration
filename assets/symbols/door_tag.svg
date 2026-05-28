@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Standard Door Tag</title>
+  <desc>Circle ~3/8" diameter on plan; door number inside (e.g. 101A).</desc>
+  <circle cx="32" cy="32" r="22" fill="white" stroke="#111" stroke-width="2"/>
+  <text x="32" y="38" font-family="Arial, sans-serif" font-size="20"
+        font-weight="600" text-anchor="middle" fill="#111">###</text>
+</svg>

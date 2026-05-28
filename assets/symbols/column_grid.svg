@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Column Grid Bubble</title>
+  <desc>Circle with a letter or number inside, on a column-grid line.</desc>
+  <circle cx="32" cy="32" r="20" fill="white" stroke="#111" stroke-width="2"/>
+  <text x="32" y="38" font-family="Arial, sans-serif" font-size="20"
+        font-weight="700" text-anchor="middle" fill="#111">A</text>
+</svg>

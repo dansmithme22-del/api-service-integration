@@ -1,0 +1,50 @@
+{
+  "$comment": "Configuration for the PDF -> PlanGraph -> Archicad ingest pipeline.",
+
+  "classifier": {
+    "min_vector_paths_for_vector_page": 50,
+    "$comment_min_vector_paths": "Pages with fewer extracted vector paths are treated as raster and routed through Gemini Vision."
+  },
+
+  "vector_parser": {
+    "min_wall_length_in": 36.0,
+    "max_wall_thickness_in": 10.0,
+    "wall_pair_max_separation_in": 10.0,
+    "min_line_width_pt": 0.36,
+    "snap_tolerance_in": 1.0,
+    "angle_snap_degrees": 5.0,
+    "$comment": "Wall detection thresholds tuned for Matterport / dense vector PDFs. Loosen min_wall_length_in if missing walls; tighten if getting fixtures."
+  },
+
+  "vision_parser": {
+    "model": "gemini-2.5-pro",
+    "fallback_model": "gemini-2.5-flash",
+    "max_pages_per_pdf": 20,
+    "image_dpi": 200,
+    "$comment_model": "gemini-2.5-pro for highest plan-comprehension accuracy; flash as cheap fallback."
+  },
+
+  "render": {
+    "image_model": "gemini-2.5-flash-image",
+    "default_style_prompt": "Photorealistic architectural interior rendering. Soft natural daylight from windows, warm interior lighting, realistic materials and textures, professional architectural photography composition. Maintain the exact geometry, room layout, openings, and furniture placement from the source image. Add realistic finishes, materials, lighting, and atmosphere.",
+    "max_concurrent_renders": 3
+  },
+
+  "build": {
+    "default_story_name": "0. GROUND FLOOR",
+    "default_wall_height_in": 108.0,
+    "default_wall_thickness_in": 4.5,
+    "wall_layer_existing": "A-Wall-Existing",
+    "wall_layer_demo": "A-Wall-Demo",
+    "wall_layer_new": "A-Wall-New",
+    "door_height_in": 80.0,
+    "door_width_default_in": 36.0,
+    "window_sill_height_in": 30.0
+  },
+
+  "output": {
+    "ingest_dir": "ingest_output",
+    "render_dir": "render_output",
+    "review_html": "review.html"
+  }
+}

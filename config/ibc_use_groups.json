@@ -1,0 +1,169 @@
+{
+  "$comment": "IBC 2021 occupancy classifications. Permit-mode only — hidden by default. NSF/occ ratios from IBC Table 1004.5. Travel-distance limits from IBC Table 1017.2.",
+
+  "use_groups": [
+    {
+      "code": "A-1",
+      "name": "Assembly — fixed seating",
+      "examples": ["Theaters", "Concert halls", "Movie theaters"],
+      "nsf_per_occ": 7,
+      "max_travel_distance_ft_sprinklered": 250,
+      "max_travel_distance_ft_nonsprinklered": 200
+    },
+    {
+      "code": "A-2",
+      "name": "Assembly — food and drink",
+      "examples": ["Restaurants", "Bars", "Nightclubs", "Banquet halls"],
+      "nsf_per_occ": 15,
+      "max_travel_distance_ft_sprinklered": 250,
+      "max_travel_distance_ft_nonsprinklered": 200
+    },
+    {
+      "code": "A-3",
+      "name": "Assembly — worship, recreation, amusement",
+      "examples": ["Churches", "Libraries", "Museums", "Community halls",
+                   "Lecture halls", "Galleries", "Indoor recreation"],
+      "nsf_per_occ": 15,
+      "max_travel_distance_ft_sprinklered": 250,
+      "max_travel_distance_ft_nonsprinklered": 200
+    },
+    {
+      "code": "A-4",
+      "name": "Assembly — indoor sporting events",
+      "examples": ["Arenas", "Indoor pools", "Gyms with spectator seating"],
+      "nsf_per_occ": 15,
+      "max_travel_distance_ft_sprinklered": 250,
+      "max_travel_distance_ft_nonsprinklered": 200
+    },
+    {
+      "code": "A-5",
+      "name": "Assembly — outdoor",
+      "examples": ["Stadiums", "Grandstands", "Bleachers"],
+      "nsf_per_occ": 15
+    },
+    {
+      "code": "B",
+      "name": "Business",
+      "examples": ["Offices", "Professional services", "Banks", "Outpatient clinics",
+                   "Veterinary clinics", "Day-care for children > 2.5 yrs"],
+      "nsf_per_occ": 150,
+      "max_travel_distance_ft_sprinklered": 300,
+      "max_travel_distance_ft_nonsprinklered": 200
+    },
+    {
+      "code": "E",
+      "name": "Educational",
+      "examples": ["K–12 schools", "Day-care for children <= 2.5 yrs"],
+      "nsf_per_occ": 20,
+      "max_travel_distance_ft_sprinklered": 250,
+      "max_travel_distance_ft_nonsprinklered": 200
+    },
+    {
+      "code": "F-1",
+      "name": "Factory — moderate hazard",
+      "examples": ["Manufacturing of non-combustible goods"],
+      "nsf_per_occ": 100
+    },
+    {
+      "code": "F-2",
+      "name": "Factory — low hazard",
+      "examples": ["Beverage production", "Glass", "Ice"],
+      "nsf_per_occ": 100
+    },
+    {
+      "code": "H-1",
+      "name": "High hazard — detonation",
+      "examples": ["Explosives manufacturing"],
+      "permit_review_required": true
+    },
+    {
+      "code": "I-1",
+      "name": "Institutional — supervised personal care",
+      "examples": ["Assisted living", "Group homes", "Halfway houses"],
+      "nsf_per_occ": 200
+    },
+    {
+      "code": "I-2",
+      "name": "Institutional — medical care",
+      "examples": ["Hospitals", "Nursing homes", "Detox", "Surgery centers w/ overnight"],
+      "nsf_per_occ": 240
+    },
+    {
+      "code": "I-3",
+      "name": "Institutional — restrained",
+      "examples": ["Jails", "Prisons", "Detention centers"]
+    },
+    {
+      "code": "I-4",
+      "name": "Institutional — day-care",
+      "examples": ["Adult day-care", "Child day-care w/ specific restrictions"],
+      "nsf_per_occ": 35
+    },
+    {
+      "code": "M",
+      "name": "Mercantile",
+      "examples": ["Retail stores", "Markets", "Department stores"],
+      "nsf_per_occ_sales": 60,
+      "nsf_per_occ_storage": 300,
+      "max_travel_distance_ft_sprinklered": 250,
+      "max_travel_distance_ft_nonsprinklered": 200
+    },
+    {
+      "code": "R-1",
+      "name": "Residential — transient",
+      "examples": ["Hotels", "Motels"],
+      "nsf_per_occ": 200
+    },
+    {
+      "code": "R-2",
+      "name": "Residential — multi-family",
+      "examples": ["Apartments", "Dorms", "Convents"],
+      "nsf_per_occ": 200
+    },
+    {
+      "code": "R-3",
+      "name": "Residential — single / two-family",
+      "examples": ["1-2 family dwellings", "Townhouses"],
+      "nsf_per_occ": 200
+    },
+    {
+      "code": "S-1",
+      "name": "Storage — moderate hazard",
+      "examples": ["Warehouses of combustible goods", "Repair garages"],
+      "nsf_per_occ": 300
+    },
+    {
+      "code": "S-2",
+      "name": "Storage — low hazard",
+      "examples": ["Warehouses of non-combustible goods", "Parking garages"],
+      "nsf_per_occ_parking": 200,
+      "nsf_per_occ_storage": 300
+    },
+    {
+      "code": "U",
+      "name": "Utility / Miscellaneous",
+      "examples": ["Sheds", "Towers", "Tanks", "Detached private garages"],
+      "nsf_per_occ": 300
+    }
+  ],
+
+  "fire_rating_assemblies": [
+    { "code": "1HR", "name": "1-hour rated partition",
+      "typical": "5/8\" Type X GWB each side of 2x4 or 3-5/8\" studs",
+      "examples": ["Corridor walls in Group B", "Demising walls between dwelling units"] },
+    { "code": "2HR", "name": "2-hour rated partition",
+      "typical": "2 layers 5/8\" Type X GWB each side, or CMU",
+      "examples": ["Exit enclosures", "Vertical exit shafts > 4 stories"] },
+    { "code": "SMK", "name": "Smoke partition",
+      "typical": "Sealed wall full-height to deck, 20-min door, no fire rating",
+      "examples": ["Corridor in I-2"] }
+  ],
+
+  "egress_minimums": {
+    "occupant_load_threshold_two_exits": 49,
+    "min_corridor_width_in_for_occ_under_50": 36,
+    "min_corridor_width_in_for_occ_50_plus": 44,
+    "min_door_width_in": 32,
+    "min_ceiling_height_in_corridor_in": 88
+  }
+}

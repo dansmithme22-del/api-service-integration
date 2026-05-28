@@ -1,0 +1,87 @@
+{
+  "$comment": "Standard CD Set mapping: CSI MasterFormat divisions + typical sheet numbering. Edit to match your firm's conventions.",
+
+  "csi_divisions": {
+    "01": "General Requirements",
+    "02": "Existing Conditions",
+    "03": "Concrete",
+    "04": "Masonry",
+    "05": "Metals",
+    "06": "Wood, Plastics, and Composites",
+    "07": "Thermal and Moisture Protection",
+    "08": "Openings",
+    "09": "Finishes",
+    "10": "Specialties",
+    "11": "Equipment",
+    "12": "Furnishings",
+    "13": "Special Construction",
+    "21": "Fire Suppression",
+    "22": "Plumbing",
+    "23": "HVAC",
+    "26": "Electrical",
+    "27": "Communications",
+    "28": "Electronic Safety and Security"
+  },
+
+  "sheet_codes": {
+    "A-001": "Cover Sheet / Code Analysis",
+    "A-002": "General Notes / Symbols / Abbreviations",
+    "A-101": "Floor Plans",
+    "AD-101": "Demolition Plans",
+    "A-201": "Exterior Elevations",
+    "A-301": "Building Sections",
+    "A-401": "Wall Sections",
+    "A-501": "Details",
+    "A-601": "Door Schedule",
+    "A-602": "Window Schedule",
+    "A-603": "Room Finish Schedule",
+    "A-604": "Wall Type Schedule",
+    "A-701": "Interior Elevations",
+    "A-801": "Reflected Ceiling Plans",
+    "A-901": "Equipment / FFE Plans"
+  },
+
+  "element_routing": {
+    "$comment": "For each PlanGraph element type, which CSI division and which sheets it appears on.",
+
+    "wall_existing": {
+      "csi_division": "02",
+      "sheets": ["A-101", "A-301", "A-401", "A-604"]
+    },
+    "wall_demolition": {
+      "csi_division": "02",
+      "sheets": ["AD-101"]
+    },
+    "wall_new": {
+      "csi_division": "09",
+      "sheets": ["A-101", "A-301", "A-401", "A-604"]
+    },
+
+    "door": {
+      "csi_division": "08",
+      "sheets": ["A-101", "A-501", "A-601"]
+    },
+    "window": {
+      "csi_division": "08",
+      "sheets": ["A-101", "A-201", "A-501", "A-602"]
+    },
+    "opening_cased": {
+      "csi_division": "08",
+      "sheets": ["A-101", "A-501"]
+    },
+
+    "room": {
+      "csi_division": "09",
+      "sheets": ["A-101", "A-603", "A-701", "A-801"]
+    }
+  },
+
+  "mark_prefixes": {
+    "$comment": "Prefix conventions for element marks in schedules.",
+    "door": "D",
+    "window": "W",
+    "opening_cased": "O",
+    "wall": "WT",
+    "room": "R"
+  }
+}
