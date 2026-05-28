@@ -41,6 +41,7 @@ from src.decide.knowledge_enrichment import enrich_schedule
 from src.apply.schedule_exporter import export_csv, schedules_to_html
 from src.apply.svg_layered_export import export_layered_svg
 from src.apply.svg_lossless_export import export_lossless_svg
+from src.components import build_components_from_plan, export_components_svg
 
 logging.basicConfig(
     level=logging.INFO,
@@ -228,6 +229,30 @@ def main() -> None:
         )
     except Exception as exc:
         logger.warning("Layered SVG export failed: %s", exc)
+
+    # ── 6. COMPONENT SVG (BIM groups: Wall/Door/Window/Floor/...) ───
+    # Each component is a self-contained Revit-Family-style unit with a
+    # complete property set in data-properties (JSON). No text glyphs.
+    comp_svg = out_dir / f"{stem}_components.svg"
+    try:
+        components = build_components_from_plan(plan)
+        export_components_svg(
+            components, comp_svg,
+            project_title=args.project or "",
+            sheet_title="A-101 Floor Plan — Components",
+        )
+        # Write a JSON sidecar with the full component list for downstream
+        # tools that don't want to parse SVG attributes.
+        import json as _json
+        comp_json = out_dir / f"{stem}_components.json"
+        comp_json.write_text(_json.dumps(
+            [c.model_dump(mode="json") for c in components],
+            indent=2, default=str,
+        ))
+        logger.info("Wrote %d components to %s and %s",
+                    len(components), comp_svg.name, comp_json.name)
+    except Exception as exc:
+        logger.warning("Components export failed: %s", exc)
 
     # ── 5. REVIEW REPORT ─────────────────────────────────────────────
     review_path = out_dir / f"{stem}_review.html"
