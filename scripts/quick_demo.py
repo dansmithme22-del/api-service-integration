@@ -107,7 +107,7 @@ def _live_demo(port: int) -> None:
 
     # 3) Renovation summary
     summary = phase_summary(elements)
-    print(f"\n--- Renovation Summary ---")
+    print("\n--- Renovation Summary ---")
     for phase, count in summary.items():
         print(f"  {phase}: {count}")
 
@@ -137,7 +137,7 @@ def _run_decide_and_export(
 
     # Print phase analysis per layout
     print("\n--- Phase Analysis Per Layout ---")
-    for guid, report in reports.items():
+    for _guid, report in reports.items():
         print(f"  {report.layout.sheet_id}:")
         for phase, count in report.phase_counts.items():
             print(f"    {phase.value}: {count} elements")

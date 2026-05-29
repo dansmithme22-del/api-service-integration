@@ -1,0 +1,89 @@
+[project]
+name = "api-service-integration"
+version = "0.2.0"
+description = "Architectural automation pipeline — PDF ingest → BIM components → CD set output"
+requires-python = ">=3.11"
+authors = [{ name = "Daniel Smith" }]
+license = { text = "Private" }
+readme = "README.md"
+
+# Dependencies are declared in requirements.txt for the full runtime; this
+# field lists only the minimal set needed to import the offline modules
+# used by pytest.  See requirements.txt for the full vision/AI stack.
+dependencies = [
+  "pydantic>=2.0",
+  "pdfplumber>=0.11",
+  "pypdfium2>=4.30",
+  "Pillow>=10.0",
+  "shapely>=2.0",
+  "numpy>=1.26",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.6"]
+
+# ─────────────────────────────────────────────────────────────────────────
+# Ruff — linter + formatter config
+# ─────────────────────────────────────────────────────────────────────────
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [
+  ".venv",
+  ".git",
+  ".pytest_cache",
+  "__pycache__",
+  "ingest_output",
+  "output",
+  "render_output",
+  "knowledge_db",
+  "reference_examples",
+  "addons",
+]
+
+[tool.ruff.lint]
+# Start lenient — only the rules that catch real bugs.
+# Expand to E, W, I once the codebase is clean.
+select = [
+  "F",      # pyflakes  (unused imports, undefined names)
+  "E9",     # syntax errors only
+  "B",      # bugbear   (common bugs — unused variables, etc.)
+]
+ignore = [
+  "E501",   # line length: handled by formatter, not linter
+  "B008",   # function calls in argument defaults (Pydantic Field uses this)
+  "B904",   # exception chaining — not always wanted in this codebase
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**"     = ["F401", "F811"]    # tests can import-without-use
+"scripts/**"   = ["F401"]            # scripts may collect imports for re-export
+"src/**/__init__.py" = ["F401"]      # re-export pattern
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = false
+
+# ─────────────────────────────────────────────────────────────────────────
+# pytest config
+# ─────────────────────────────────────────────────────────────────────────
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+  "-v",
+  "--tb=short",
+  "--strict-markers",
+]
+markers = [
+  "online: tests that require live API access (skipped in CI)",
+  "archicad: tests that require a running Archicad instance (skipped in CI)",
+  "slow: tests that take more than a few seconds",
+]

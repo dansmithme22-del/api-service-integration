@@ -1,0 +1,161 @@
+name: CI
+
+# CI runs on every push to main and every pull request.
+# Three jobs in parallel: lint, test, validate-configs.
+# Tests are designed to run OFFLINE — no API keys, no external services.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:        # allow manual triggering from the Actions tab
+
+# Cancel an in-flight run when a new commit arrives on the same branch / PR.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  # ──────────────────────────────────────────────────────────────────────
+  # Lint
+  # ──────────────────────────────────────────────────────────────────────
+  lint:
+    name: Lint (ruff)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install ruff
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff
+
+      - name: Run ruff check
+        # Reports findings in GitHub's "Annotations" panel.
+        # Initial-pass: don't block the build on style issues yet.
+        run: ruff check . --output-format=github
+        continue-on-error: true
+
+      - name: Show ruff version
+        run: ruff --version
+
+  # ──────────────────────────────────────────────────────────────────────
+  # Tests — the offline pytest suite
+  # ──────────────────────────────────────────────────────────────────────
+  test:
+    name: Tests (pytest)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install slim test dependencies
+        # Only the libraries the offline test suite actually imports.
+        # The heavy AI deps (anthropic, openai, google-genai, chromadb,
+        # sentence-transformers) are not needed for tests/.
+        run: |
+          python -m pip install --upgrade pip wheel
+          pip install \
+            pydantic \
+            pdfplumber \
+            pypdfium2 \
+            Pillow \
+            shapely \
+            numpy \
+            python-dotenv \
+            pytest
+
+      - name: Verify core modules import
+        # If a module has a syntax or import error this catches it before
+        # pytest's import-collection muddies the trace.
+        run: |
+          python -c "from src.ingest import plan_model, vector_parser, geometry_normalizer"
+          python -c "from src.ingest.geometry import snap, planar_graph, arc_detector"
+          python -c "from src.decide import scheduler"
+          python -c "from src.components import schemas, builder, svg_export"
+          python -c "from src.apply import schedule_exporter, svg_lossless_export, svg_layered_export"
+
+      - name: Run pytest
+        run: pytest tests/ -v --tb=short --color=yes
+
+  # ──────────────────────────────────────────────────────────────────────
+  # Validate every JSON config file parses
+  # ──────────────────────────────────────────────────────────────────────
+  validate-configs:
+    name: Validate config JSON
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Parse every JSON under config/ and assets/
+        run: |
+          python <<'PY'
+          import json, sys
+          from pathlib import Path
+
+          errs = []
+          ok = 0
+          for root in ("config", "assets"):
+              base = Path(root)
+              if not base.exists():
+                  continue
+              for p in base.rglob("*.json"):
+                  try:
+                      json.loads(p.read_text())
+                      ok += 1
+                  except Exception as exc:
+                      errs.append(f"{p}: {exc}")
+
+          print(f"{ok} JSON file(s) parsed successfully.")
+          if errs:
+              print()
+              print("Errors:")
+              for e in errs:
+                  print(f"  {e}")
+              sys.exit(1)
+          PY
+
+  # ──────────────────────────────────────────────────────────────────────
+  # Summary gate — fails if any required job failed
+  # ──────────────────────────────────────────────────────────────────────
+  ci-summary:
+    name: CI Summary
+    needs: [lint, test, validate-configs]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Report status
+        run: |
+          echo "Lint:             ${{ needs.lint.result }}"
+          echo "Tests:            ${{ needs.test.result }}"
+          echo "Validate configs: ${{ needs.validate-configs.result }}"
+          # Lint is advisory at this stage; only test + validate must pass.
+          if [[ "${{ needs.test.result }}" != "success" \
+             || "${{ needs.validate-configs.result }}" != "success" ]]; then
+            exit 1
+          fi

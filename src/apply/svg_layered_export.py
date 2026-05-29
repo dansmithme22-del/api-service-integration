@@ -32,9 +32,7 @@ from ..ingest.plan_model import (
     Opening,
     OpeningKind,
     PlanGraph,
-    Room,
     Wall,
-    WallStatus,
 )
 
 logger = logging.getLogger(__name__)
@@ -534,7 +532,7 @@ def _title_block(plan, project_title: str, sheet_title: str,
         ("LEVEL", plan.level_name),
         ("SHEET", sheet_title),
         ("SCALE",
-         f"1/4\" = 1'-0\"" if (plan.page and plan.page.calibration_dim_in == 0)
+         "1/4\" = 1'-0\"" if (plan.page and plan.page.calibration_dim_in == 0)
          else (plan.page.calibration_dim_text if plan.page else "")),
         ("DRAWN BY", "Pipeline auto-generated"),
         ("DATE", plan.generated_at.strftime("%Y-%m-%d") if hasattr(plan.generated_at, "strftime") else str(plan.generated_at)),

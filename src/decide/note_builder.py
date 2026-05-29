@@ -15,7 +15,6 @@ from typing import Any
 
 from ..models.data_model import (
     ACLayout,
-    Discipline,
     NoteEntry,
     ProjectNotesOutput,
     SheetNotes,

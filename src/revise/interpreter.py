@@ -20,16 +20,15 @@ import os
 import uuid
 from copy import deepcopy
 from dataclasses import dataclass, field
-from typing import Any, Literal, Optional
+from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from ..ingest.plan_model import (
     Opening,
     OpeningKind,
     PlanGraph,
     Point,
-    Room,
     Wall,
     WallStatus,
 )

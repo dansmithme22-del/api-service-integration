@@ -214,7 +214,7 @@ def _split_at_intersections(
             split_points[j].append(s)
 
     out: list[tuple[float, float, float, float]] = []
-    for l, ts in zip(lines, split_points):
+    for l, ts in zip(lines, split_points, strict=False):
         params = sorted({0.0, 1.0, *[t for t in ts if 1e-9 < t < 1.0 - 1e-9]})
         for k in range(len(params) - 1):
             t0, t1 = params[k], params[k + 1]

@@ -13,25 +13,21 @@ from __future__ import annotations
 
 import logging
 import math
-import uuid
 from typing import Optional
 
 from ..ingest.plan_model import (
     Fixture,
-    FixtureKind,
     Opening,
     OpeningKind,
     PlanGraph,
     Room,
     Wall,
-    WallStatus,
 )
 from .schemas import (
     AssemblyLayer,
     CeilingComponent,
     Component,
     ComponentKind,
-    DeckComponent,
     DoorComponent,
     FloorComponent,
     Point2D,

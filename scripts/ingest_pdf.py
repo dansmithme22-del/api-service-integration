@@ -194,7 +194,7 @@ def main() -> None:
             logger.warning("Knowledge enrichment skipped: %s", exc)
 
     schedules_dir = out_dir / f"{stem}_schedules"
-    csv_paths = export_csv(sched, schedules_dir)
+    export_csv(sched, schedules_dir)
     schedule_json = out_dir / f"{stem}_schedule.json"
     schedule_json.write_text(sched.model_dump_json(indent=2))
     logger.info(

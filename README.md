@@ -1,5 +1,7 @@
 # Layout Annotation Automation for Archicad 29
 
+[![CI](https://github.com/dansmithme22-del/api-service-integration/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/dansmithme22-del/api-service-integration/actions/workflows/ci.yml)
+
 Automatically generate and maintain **layout sheet notes** (demolition notes, new-work notes, code notes, scope notes, etc.) for every sheet in an Archicad 29 project — driven by the **model**, **renovation phases**, and **configurable rules**.
 
 **For architects and interior designers**: If you work on renovation projects and spend time writing and updating sheet notes based on what's being demolished, built new, or retained — this tool does that automatically by reading your Archicad model.

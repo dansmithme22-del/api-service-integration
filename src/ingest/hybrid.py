@@ -28,7 +28,6 @@ from .accuracy_checker import check_plan_accuracy
 from .plan_model import (
     IngestSource,
     Opening,
-    OpeningKind,
     PageMeta,
     PlanGraph,
     Point,
@@ -37,7 +36,6 @@ from .plan_model import (
 )
 from .vector_anchor import (
     NormLine,
-    VectorPageNorm,
     clip_to_drawing_area,
     extract_vector_norm,
     pair_walls_norm,
@@ -120,7 +118,6 @@ def hybrid_ingest(
     #    Openings: re-anchor each vision opening to the nearest vector wall.
     openings: list[Opening] = []
     for o in vision_plan.openings:
-        op_xy = (o.distance_along_wall_in, 0.0)  # not used; we re-snap below
         # The vision parser already converted opening center to inches and
         # attached to nearest VISION wall. We need to re-attach to the
         # nearest vector wall instead.
@@ -190,7 +187,6 @@ def _vision_parse_for_labels(png_bytes, pdf_path, page_index,
     later in favour of the vector-derived ones.
     """
     from .vision_parser import (
-        ANCHOR_SYSTEM_PROMPT,
         SYSTEM_PROMPT,
         _dict_to_plan_graph,
         _extract_json,

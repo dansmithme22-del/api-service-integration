@@ -9,7 +9,7 @@ import logging
 from typing import Any
 
 from ..connection import ArchicadConnection
-from ..models.data_model import ACElement, Phase
+from ..models.data_model import ACElement
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +32,7 @@ def get_all_elements(conn: ArchicadConnection) -> list[dict[str, Any]]:
             type_obj = getattr(conn.types, etype, None)
             if type_obj is None:
                 continue
-            batch = cmd.GetAllElements()  # returns all element IDs
+            cmd.GetAllElements()  # returns all element IDs
         except Exception:
             # Some SDK versions require specifying element type differently.
             pass

@@ -22,14 +22,8 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 from ..ingest.plan_model import (
-    Fixture,
-    FixtureKind,
-    Opening,
     OpeningKind,
     PlanGraph,
-    Room,
-    Wall,
-    WallStatus,
 )
 
 logger = logging.getLogger(__name__)

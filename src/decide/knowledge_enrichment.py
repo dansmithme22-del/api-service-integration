@@ -17,8 +17,7 @@ from __future__ import annotations
 import logging
 from typing import Optional
 
-from ..ingest.plan_model import FixtureKind, OpeningKind
-from ..knowledge import KnowledgeKind, KnowledgeLayer, KnowledgeStore, SearchResult
+from ..knowledge import KnowledgeStore, SearchResult
 from .scheduler import (
     DoorScheduleRow,
     FixtureScheduleRow,

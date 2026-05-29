@@ -32,7 +32,7 @@ from .plan_model import (
     Wall,
     WallStatus,
 )
-from .vector_parser import RawLine, RawPageGeometry, RawText
+from .vector_parser import RawLine, RawPageGeometry
 
 logger = logging.getLogger(__name__)
 

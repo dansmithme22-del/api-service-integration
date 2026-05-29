@@ -111,7 +111,7 @@ def dedupe_lines(
                 keep[i] = False
                 break
 
-    out = [l for k, l in zip(keep, lines) if k]
+    out = [l for k, l in zip(keep, lines, strict=False) if k]
     logger.info("Dedupe: %d -> %d segments", len(lines), len(out))
     return out
 

@@ -65,7 +65,7 @@ def resolve_property_ids(
                 )
 
         resolved = conn.commands.GetPropertyIds(user_ids)
-        for pname, pid in zip(property_names, resolved):
+        for pname, pid in zip(property_names, resolved, strict=False):
             if pid is not None:
                 id_map[pname] = pid
                 logger.debug("Resolved %s → %s", pname, pid)
@@ -99,7 +99,7 @@ def get_property_values(
         results: list[dict[str, Any]] = []
         for row in raw:
             row_dict: dict[str, Any] = {}
-            for pid, cell in zip(property_ids, row):
+            for pid, cell in zip(property_ids, row, strict=False):
                 key = str(pid)
                 val = _extract_cell_value(cell)
                 row_dict[key] = val
@@ -127,7 +127,7 @@ def set_property_values(
     """
     try:
         value_wraps = []
-        for eid, val in zip(element_ids, values):
+        for eid, val in zip(element_ids, values, strict=False):
             value_wraps.append(
                 conn.types.ElementPropertyValue(
                     eid, property_id,

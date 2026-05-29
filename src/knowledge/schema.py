@@ -14,7 +14,7 @@ Permit-mode is the user-facing toggle:
 from __future__ import annotations
 
 from enum import Enum
-from typing import Any, Optional
+from typing import Any
 
 from pydantic import BaseModel, Field
 

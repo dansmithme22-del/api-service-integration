@@ -1,0 +1,51 @@
+# Dependabot — opens PRs when dependencies have new releases.
+# https://docs.github.com/en/code-security/dependabot
+
+version: 2
+
+updates:
+  # Python deps in requirements.txt
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "deps"
+    groups:
+      # Group AI provider SDK updates so they land together.
+      ai-providers:
+        patterns:
+          - "anthropic"
+          - "openai"
+          - "google-genai"
+      # Group testing/lint tools.
+      dev-tools:
+        patterns:
+          - "pytest*"
+          - "ruff"
+      # Group heavy ML stack so we review their breaking changes as a set.
+      ml-stack:
+        patterns:
+          - "chromadb"
+          - "sentence-transformers"
+          - "torch*"
+          - "transformers"
+
+  # GitHub Actions versions
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
