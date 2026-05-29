@@ -1,5 +1,5 @@
 # Core
-archicad>=27.0.0
+archicad>=29.3000
 pydantic>=2.0
 
 # PDF ingest
