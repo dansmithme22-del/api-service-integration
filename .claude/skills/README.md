@@ -8,16 +8,34 @@ Each skill is invocable on its own. Each links to the deeper reference in `agent
 
 ## The skills
 
+### Working-process skills
+
 | Skill | What it is | When to invoke |
 |---|---|---|
-| **team-engineering-approach** | The default working voice — Staff Engineer leading a small team (DBA, Backend, Frontend, QA), consulting each persona before acting in their domain | Starting any non-trivial task, before a design decision, before merging work |
-| **architectural-geometry** | PhD-level computational geometry for plans — coordinate systems, scale as linear transform, planar-graph face enumeration | Anything touching positions, distances, areas, or coordinate transforms |
-| **cad-drafting-standards** | 20-year-drafter persona — AIA Layer Guidelines, NCS, ISO 128, scales, sheet identifiers | Assigning AIA layers, picking line weights, choosing scales, numbering sheets |
-| **csi-masterformat** | CSI MasterFormat 2020 — the 50-division spec/sheet routing language | Classifying a building element, routing to CD sheets, writing spec sections |
-| **ibc-code-analysis** | IBC 2021 — use groups, occupant loads, egress, fire ratings, accessibility | **Permit-mode only** — code analysis sheets, egress diagrams, fire-rating callouts |
-| **bim-component-thinking** | Revit-Family / SketchUp-Component schemas — walls, doors, windows, floors, ceilings, stairs, decks with build-ready properties | Designing data schemas, populating schedules, emitting BIM-tagged geometry |
+| **team-engineering-approach** | The default working voice — team lead consulting specialists before acting in their domains | Starting any non-trivial task, before a design decision, before merging |
+
+### Software-side skills
+
+| Skill | What it is | When to invoke |
+|---|---|---|
+| **architectural-geometry** | PhD-level computational geometry — coordinate systems, scale as linear transform, planar-graph face enumeration | Positions, distances, areas, coordinate transforms |
+| **pdf-vector-extraction** | pdfplumber-based geometry extraction — stroke classification, pair detection, arc detection | Reading PDF vector primitives, tuning extraction thresholds |
 | **architectural-vision-prompting** | How to instruct vision models (Claude / Gemini / GPT) to read floor plans accurately | Writing or editing system prompts for vision-model plan analysis |
-| **pdf-vector-extraction** | pdfplumber-based geometry extraction — stroke classification, pair detection, planar graphs, arc detection | Reading a PDF's vector primitives, tuning extraction thresholds, building lossless replicas |
+| **bim-component-thinking** | Revit-Family / SketchUp-Component schemas with build-ready properties | Designing data schemas, populating schedules, emitting BIM-tagged geometry |
+
+### Domain / industry skills (15-year commercial expert)
+
+| Skill | What it is | When to invoke |
+|---|---|---|
+| **cad-drafting-standards** | 20-year-drafter handbook — AIA Layer Guidelines, NCS, ISO 128, scales, sheet identifiers | Assigning AIA layers, picking line weights, choosing scales, numbering sheets |
+| **csi-masterformat** | CSI MasterFormat 2020 — the 50-division spec/sheet routing language | Classifying elements, routing to CD sheets, writing spec sections |
+| **commercial-construction** | 15-year commercial construction practice — project delivery, phases, submittals, RFIs, owner roles | Phase planning, CDs, owner conversations, reading another firm's set |
+| **industrial-facility-design** | 15-year industrial perspective — warehouses, manufacturing, distribution; loading docks, racking, slabs, ventilation | Industrial use groups (F-1, F-2, S-1, S-2), process buildings |
+| **architectural-design-process** | 15-year commercial AIA process — programming, SD, DD, CD, CA; contract docs; owner approval gates | Project planning, fee proposals, phase sequencing |
+| **mep-mechanical-hvac** | 15-year HVAC perspective — system types, ductwork, loads, ventilation rates, controls | Mech room sizing, ductwork coordination, M-series review |
+| **mep-plumbing** | 15-year plumbing perspective — fixture units, pipe sizing, hot water, IPC, backflow | Fixture counts, wet walls, hot water selection, P-series review |
+| **ibc-code-analysis** | IBC 2021 — use groups, occupant loads, egress, fire ratings, accessibility | **Permit-mode only** — code sheets, egress diagrams, fire-rating callouts |
+| **sustainability-and-energy** | LEED v4.1, WELL v2, IECC/ASHRAE 90.1, passive design, embodied carbon, daylight, IAQ | Energy code path, LEED targets, envelope/HVAC tradeoffs, IAQ goals |
 
 ---
 

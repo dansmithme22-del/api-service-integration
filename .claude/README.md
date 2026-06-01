@@ -7,26 +7,49 @@ on any machine that clones it.
 ```
 .claude/
 ├── README.md          (you are here — folder map + growth rules)
+│
 ├── skills/            invocable knowledge bundles
 │   ├── README.md
-│   ├── team-engineering-approach.md
+│   │
+│   ├── team-engineering-approach.md   ← how we work
+│   │
+│   │   software-side skills
 │   ├── architectural-geometry.md
+│   ├── pdf-vector-extraction.md
+│   ├── architectural-vision-prompting.md
+│   ├── bim-component-thinking.md
+│   │
+│   │   domain / industry skills (15-yr commercial expert level)
 │   ├── cad-drafting-standards.md
 │   ├── csi-masterformat.md
+│   ├── commercial-construction.md
+│   ├── industrial-facility-design.md
+│   ├── architectural-design-process.md
+│   ├── mep-mechanical-hvac.md
+│   ├── mep-plumbing.md
 │   ├── ibc-code-analysis.md
-│   ├── bim-component-thinking.md
-│   ├── architectural-vision-prompting.md
-│   └── pdf-vector-extraction.md
-├── personas/          team-of-specialists review lenses
+│   └── sustainability-and-energy.md
+│
+├── personas/          two teams, each with a lead + specialists
 │   ├── README.md
+│   │
+│   │   software engineering team
 │   ├── staff-engineer.md
 │   ├── dba.md
 │   ├── backend-engineer.md
 │   ├── frontend-engineer.md
-│   └── qa-specialist.md
+│   ├── qa-specialist.md
+│   │
+│   │   architectural design team
+│   ├── principal-architect.md
+│   ├── bim-engineer.md
+│   ├── architectural-designer.md
+│   └── sustainability-specialist.md
+│
 └── memory/            "we agreed on this" persistent context
     ├── README.md
-    └── team-structure.md
+    ├── team-structure.md              (software engineering team)
+    └── design-team-structure.md       (architectural design team)
 ```
 
 ---

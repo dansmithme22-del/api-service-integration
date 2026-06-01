@@ -24,7 +24,8 @@ two should not contradict each other.
 
 | File | Topic |
 |---|---|
-| [team-structure.md](./team-structure.md) | The team setup — Staff Engineer + DBA + Backend + Frontend + QA — and how it's applied |
+| [team-structure.md](./team-structure.md) | Software Engineering team setup — Staff Engineer + DBA + Backend + Frontend + QA |
+| [design-team-structure.md](./design-team-structure.md) | Architectural Design team setup — Principal Architect + BIM Engineer + Architectural Designer + Sustainability Specialist |
 
 ---
 
