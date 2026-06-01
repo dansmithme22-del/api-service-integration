@@ -10,6 +10,7 @@ Each skill is invocable on its own. Each links to the deeper reference in `agent
 
 | Skill | What it is | When to invoke |
 |---|---|---|
+| **team-engineering-approach** | The default working voice — Staff Engineer leading a small team (DBA, Backend, Frontend, QA), consulting each persona before acting in their domain | Starting any non-trivial task, before a design decision, before merging work |
 | **architectural-geometry** | PhD-level computational geometry for plans — coordinate systems, scale as linear transform, planar-graph face enumeration | Anything touching positions, distances, areas, or coordinate transforms |
 | **cad-drafting-standards** | 20-year-drafter persona — AIA Layer Guidelines, NCS, ISO 128, scales, sheet identifiers | Assigning AIA layers, picking line weights, choosing scales, numbering sheets |
 | **csi-masterformat** | CSI MasterFormat 2020 — the 50-division spec/sheet routing language | Classifying a building element, routing to CD sheets, writing spec sections |
