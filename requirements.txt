@@ -10,9 +10,9 @@ shapely>=2.0
 numpy>=1.26
 
 # Vision providers (install whichever you use; all three are listed for convenience)
-google-genai>=1.0
-anthropic>=0.40
-openai>=1.50
+google-genai>=2.7.0
+anthropic>=0.105.2
+openai>=2.40.0
 python-dotenv>=1.0
 
 # Knowledge store (vector DB + local embeddings)
