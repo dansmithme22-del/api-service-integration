@@ -16,8 +16,8 @@ openai>=1.50
 python-dotenv>=1.0
 
 # Knowledge store (vector DB + local embeddings)
-chromadb>=0.5
-sentence-transformers>=3.0
+chromadb>=1.5.9
+sentence-transformers>=5.5.1
 
 # Testing
 pytest>=7.0
